@@ -3,12 +3,14 @@ using System.Collections;
 using Domain.DTOs.BorrowRecord;
 using Infrastructure.Interfaces;
 using Infrastructure.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
 [ApiController]
 [Route("api/borrowRecord")]
+[Authorize]
 public class BorrowRecordController
 {
     private readonly IBorrowRecordServices borrowRecordServices;

@@ -101,9 +101,7 @@ public class BookService : IBookServices
         {
             if (string.IsNullOrWhiteSpace(genre))
                 return Response<IEnumerable<BookGetDto>>.Fail(400, "Genre is required");
-            var find = await _context.Books.AnyAsync(b => b.Genre == genre);
-            if(!find)
-            return Response<IEnumerable<BookGetDto>>.Fail(404, $"No books found for your given genre: '{genre}'");
+
             var item = await _context.Books
             .Where(b => b.Genre.ToLower() == genre.ToLower())
             .Select(b => new BookGetDto
@@ -156,7 +154,7 @@ public class BookService : IBookServices
                 PublishedDate = b.PublishedDate,
                 AuthorId = b.AuthorId,
             }).ToListAsync();
-            return Response<IEnumerable<BookGetDto>>.Success(item, "Success");
+            return Response<IEnumerable<BookGetDto>>.Success(item, "Successfully Get");
         }
         catch (Exception ex)
         {

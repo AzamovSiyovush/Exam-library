@@ -21,7 +21,11 @@ public class BorrowRecordService : IBorrowRecordServices
         try
         {
             if (request.BookId == 0 || request.MemberId == 0)
-                return Response<string>.Fail(400, "BookId and MemberId are required");
+                return Response<string>.Fail(400, "");
+
+            var book = await _context.Books.FirstOrDefaultAsync(b => b.Id == request.BookId);
+            if (book == null)
+                return Response<string>.Fail(404, "Not Found");
             var borrowNew = new BorrowRecord()
             {
                 BookId = request.BookId,

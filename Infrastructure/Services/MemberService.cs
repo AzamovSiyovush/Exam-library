@@ -22,10 +22,12 @@ public class MemberService : IMemberServices
             
         if (string.IsNullOrWhiteSpace(request.Name) || string.IsNullOrWhiteSpace(request.Email))
             return Response<string>.Fail(400, "Name and Email are required");
+            
         if (request.Name.Length < 3)
-            return Response<string>.Fail(400, "Name must be at least 3 characters long");
+                return Response<string>.Fail(400, "Name must be at least 3 characters long");
+                
         if (request.Email.Length < 5)
-            return Response<string>.Fail(400, "Email must be at least 5 characters long");
+                return Response<string>.Fail(400, "Email must be at least 5 characters long");
         if (!request.Email.Contains("@"))
             return Response<string>.Fail(400, "Email is not valid");
         var findEmail = await _context.Members.AnyAsync(m => m.Email.ToLower() == request.Email.ToLower());
@@ -43,7 +45,7 @@ public class MemberService : IMemberServices
         catch (Exception ex)
         {
             System.Console.WriteLine(ex.Message);
-            return Response<string>.Fail(500, "Internal server error:");
+            return Response<string>.Fail(500, $"Internal server error: {ex.Message}");
         }
     }
 

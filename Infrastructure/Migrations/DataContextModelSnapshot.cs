@@ -73,20 +73,14 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.BorrowRecord", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("AuthorId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("BookId")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("BorrowDate")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
 
                     b.Property<int>("MemberId")
                         .HasColumnType("integer");
@@ -94,11 +88,7 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime?>("ReturnDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("AuthorId");
-
-                    b.HasIndex("BookId");
+                    b.HasKey("BookId");
 
                     b.HasIndex("MemberId");
 
@@ -129,6 +119,38 @@ namespace Infrastructure.Migrations
                     b.ToTable("Members");
                 });
 
+            modelBuilder.Entity("Domain.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsBlocked")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("Domain.Entities.Book", b =>
                 {
                     b.HasOne("Domain.Entities.Author", "Author")
@@ -142,10 +164,6 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.BorrowRecord", b =>
                 {
-                    b.HasOne("Domain.Entities.Author", null)
-                        .WithMany("BorrowRecords")
-                        .HasForeignKey("AuthorId");
-
                     b.HasOne("Domain.Entities.Book", "Book")
                         .WithMany("BorrowRecords")
                         .HasForeignKey("BookId")
@@ -166,8 +184,6 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Domain.Entities.Author", b =>
                 {
                     b.Navigation("Books");
-
-                    b.Navigation("BorrowRecords");
                 });
 
             modelBuilder.Entity("Domain.Entities.Book", b =>

@@ -2,12 +2,14 @@ using System;
 using Domain.DTOs.Author;
 using Infrastructure.Interfaces;
 using Infrastructure.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
 [ApiController]
 [Route("api/authors")]
+[Authorize]
 public class AuthorController
 {
     private readonly IAuthorServices _authorServices;

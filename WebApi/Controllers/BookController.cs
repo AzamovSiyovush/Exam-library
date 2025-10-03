@@ -4,12 +4,14 @@ using Domain.DTOs.Author;
 using Domain.DTOs.Book;
 using Infrastructure.Interfaces;
 using Infrastructure.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
 [ApiController]
 [Route("api/books")]
+[Authorize]
 public class BookController
 {
     private readonly IBookServices _bookservice;

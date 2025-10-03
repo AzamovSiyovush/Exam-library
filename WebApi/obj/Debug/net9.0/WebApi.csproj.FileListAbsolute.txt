@@ -135,3 +135,5 @@ C:\Users\Public\dotnet\month1\week5\Exam-library\WebApi\obj\Debug\net9.0\refint\
 C:\Users\Public\dotnet\month1\week5\Exam-library\WebApi\obj\Debug\net9.0\WebApi.pdb
 C:\Users\Public\dotnet\month1\week5\Exam-library\WebApi\obj\Debug\net9.0\WebApi.genruntimeconfig.cache
 C:\Users\Public\dotnet\month1\week5\Exam-library\WebApi\obj\Debug\net9.0\ref\WebApi.dll
+C:\Users\Public\dotnet\month1\week5\Exam-library\WebApi\obj\Debug\net9.0\WebApi.sourcelink.json
+C:\Users\Public\dotnet\month1\week5\Exam-library\WebApi\bin\Debug\net9.0\BCrypt.Net-Next.dll

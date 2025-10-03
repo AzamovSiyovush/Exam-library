@@ -10,5 +10,4 @@ public class Author
 
     // Navigation property
     public IEnumerable<Book> Books { get; set; }
-    public IEnumerable<BorrowRecord> BorrowRecords { get; set; }
 }

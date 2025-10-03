@@ -2,12 +2,14 @@ using System;
 using Domain.DTOs.Member;
 using Infrastructure.Interfaces;
 using Infrastructure.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
 [ApiController]
 [Route("api/members")]
+[Authorize]
 public class MemberController
 {
     private readonly IMemberServices _memberService;
@@ -17,7 +19,7 @@ public class MemberController
     }
 
     [HttpPost]
-    public async Task<Response<string>> CreateItem([FromForm]MemberCreateDto request)
+    public async Task<Response<string>> CreateItem(MemberCreateDto request)
     {
         return await _memberService.CreateItem(request);
     }

@@ -66,8 +66,8 @@ public class AuthorService : IAuthorServices
             if (item == null)
                 return Response<AuthorGetDto>.Fail(404, "Author not found");
 
-            if (id < 1)
-                return Response<AuthorGetDto>.Fail(400, "Id must be greater than 0");
+            // if (id < 1)
+            //     return Response<AuthorGetDto>.Fail(400, "Id must be greater than 0");
             var author = await _context.Authors
                 .Where(a => a.Id == id)
                 .Select(a => new AuthorGetDto
