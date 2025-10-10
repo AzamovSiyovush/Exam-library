@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{AF133BDA-1073-4E94-AAD3-B49189E7A810}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor", "Razor\Razor.csproj", "{F746129B-9B9D-4899-9CDA-7AB6B90F885E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{AF133BDA-1073-4E94-AAD3-B49189E7A810}.Release|x64.Build.0 = Release|Any CPU
 		{AF133BDA-1073-4E94-AAD3-B49189E7A810}.Release|x86.ActiveCfg = Release|Any CPU
 		{AF133BDA-1073-4E94-AAD3-B49189E7A810}.Release|x86.Build.0 = Release|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Debug|x64.Build.0 = Debug|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Debug|x86.Build.0 = Debug|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Release|x64.ActiveCfg = Release|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Release|x64.Build.0 = Release|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F746129B-9B9D-4899-9CDA-7AB6B90F885E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

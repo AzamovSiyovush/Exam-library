@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication;
 
-namespace Infrastructure.Services;
+namespace Infrastructure.Services; 
 
 public class AuthService(DataContext context, IHttpContextAccessor httpContextAccessor) : IAuthService
 {
@@ -48,7 +48,7 @@ public class AuthService(DataContext context, IHttpContextAccessor httpContextAc
 
     public async Task<Result<string>> RegisterAsync(RegisterRequestDto dto)
     {
-          if (string.IsNullOrWhiteSpace(dto.FullName))
+        if (string.IsNullOrWhiteSpace(dto.FullName))
             return Result<string>.Fail("Fullname is required.", ErrorType.Validation);
 
         if (string.IsNullOrWhiteSpace(dto.PhoneNumber))

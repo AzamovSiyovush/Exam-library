@@ -1,0 +1,68 @@
+﻿@page "/authors/create"
+@model Create
+
+<div class="container mt-5" style="max-width: 600px;">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body p-4">
+            <h3 class="text-primary fw-bold mb-4">Create Author</h3>
+
+            <form method="post">
+                <div class="mb-3">
+                    <label asp-for="AuthorCreateDto.Name" class="form-label fw-semibold">Name</label>
+                    <input asp-for="AuthorCreateDto.Name" type="text" class="form-control form-control-lg" placeholder="Enter AuthorName name" />
+                    <span asp-validation-for="AuthorCreateDto.Name" class="text-danger small"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="AuthorCreateDto.BirthDate" class="form-label fw-semibold">BirthDate</label>
+                    <input asp-for="AuthorCreateDto.BirthDate" type="text" class="form-control form-control-lg" placeholder="Enter Birthdate " />
+                    <span asp-validation-for="AuthorCreateDto.BirthDate" class="text-danger small"></span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <a asp-page="/authors/index" class="btn btn-outline-secondary px-4">Back</a>
+                    <button type="submit" class="btn btn-add px-4">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f6f8fb;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+        background-color: #ffffff;
+    }
+
+    .btn-add {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: 500;
+        border: none;
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+
+    .btn-add:hover {
+        background-color: #0056b3;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn-outline-secondary {
+        border-radius: 8px;
+        font-weight: 500;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        padding: 10px 14px;
+    }
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+    }
+</style>
